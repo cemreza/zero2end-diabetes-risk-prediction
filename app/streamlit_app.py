@@ -1,15 +1,15 @@
 import streamlit as st
 import joblib
 import pandas as pd
-import altair as alt  # Grafik için
+import altair as alt  
 
-# --- MODELİ YÜKLE ---
+-- Model yükleme --
 model = joblib.load("models/final_model.pkl")
 
 st.title("🩺 Diyabet Risk Tahmin Uygulaması")
 st.write("Aşağıdaki bilgileri doldurarak tahmini diyabet riskinizi ve dünya ortalamasıyla karşılaştırmasını görebilirsiniz.")
 
-# YAŞ GRUPLARI (TÜİK'e yakın, ama modelin 1–13 ordinal yapısını koruyarak)
+# YAŞ GRUPLARI
 yas_map = {
     "18–24": 1,
     "25–34": 3,      # 25–29 (2) ve 30–34 (3) arası
@@ -30,7 +30,7 @@ egitim_map = {
     "Lisansüstü (Master/Doktora)": 6
 }
 
-# GELİR (Türkiye koşullarına göre, asgari ücret referanslı)
+# GELİR 
 gelir_map = {
     "Asgari Ücret Altı (0–22.000 TL)": 1,
     "Asgari Ücret – 2× Asgari Ücret (22.000–44.000 TL)": 2,
@@ -44,7 +44,7 @@ gelir_map = {
 
 # --- FORM ---
 
-st.subheader("🔍 Sağlık Bilgileri")
+st.subheader("Sağlık Bilgileri")
 
 HighBP = st.selectbox("Yüksek Tansiyon", ["Hayır", "Evet"])
 HighChol = st.selectbox("Yüksek Kolesterol", ["Hayır", "Evet"])
@@ -60,13 +60,13 @@ Alcohol = st.selectbox("Aşırı Alkol Tüketimi", ["Hayır", "Evet"])
 AnyHealthcare = st.selectbox("Herhangi Bir Sağlık Sigortası / Sağlık Hizmeti", ["Hayır", "Evet"])
 NoDoc = st.selectbox("Ücret Nedeniyle Doktora Gidememe", ["Hayır", "Evet"])
 
-st.subheader("🧠 Genel Sağlık Durumu")
+st.subheader("Genel Sağlık Durumu")
 GenHlth = st.slider("Genel Sağlık (1=Mükemmel, 5=Kötü)", 1, 5)
 MentHlth = st.slider("Ruhsal Sağlık Problemi (son 30 günde, gün)", 0, 30)
 PhysHlth = st.slider("Fiziksel Sağlık Problemi (son 30 günde, gün)", 0, 30)
 DiffWalk = st.selectbox("Yürümede Zorluk", ["Hayır", "Evet"])
 
-st.subheader("👤 Demografik Bilgiler")
+st.subheader("Demografik Bilgiler")
 Sex = st.selectbox("Cinsiyet", ["Kadın", "Erkek"])
 Age = st.selectbox("Yaş Grubu", list(yas_map.keys()))
 Education = st.selectbox("Eğitim Düzeyi", list(egitim_map.keys()))
