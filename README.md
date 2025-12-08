@@ -52,24 +52,43 @@ Uygulama, kullanıcının girdiği sağlık bilgilerini hemen işleyip tahmini r
 /proje yapısı/
 
 zero2end-diabetes-risk-prediction/
+
 │── README.md
+
 │── requirements.txt
+
 │── data/
+
 │   ├── raw/ (orijinal veri seti)
+
 │   └── processed/ (örneklem ve işlenmiş veriler)
+
 │── notebook/
+
 │   ├── 01_EDA.ipynb
+
 │   ├── 02_baseline.ipynb
+
 │   ├── 03_feature_engineering.ipynb
+
 │   ├── 04_model_optimization.ipynb
+
 │   ├── 05_evaluation.ipynb
+
 │── models/
+
 │   └── final_model.pkl
+
 │── src/
+
 │   ├── preprocess.py
+
 │   ├── train.py
+
 │   ├── inference.py
+
 │── app/
+
 │   └── streamlit_app.py
 
 
