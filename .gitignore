@@ -1,6 +1,12 @@
+# veri dosyaları
 data/raw/diabetes_012_health_indicators_BRFSS2015.csv
 data/raw/
-models/final_model.pkl
+data/processed/
+
+#modeller
+models
+final_model.pkl
+# Jupyter Notebook geçici dosyaları
 .ipynb_checkpoints/
 __pycache__/
 *.pyc
