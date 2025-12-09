@@ -2,3 +2,6 @@ data/raw/diabetes_012_health_indicators_BRFSS2015.csv
 data/raw/
 models/final_model.pkl
 .ipynb_checkpoints/
+__pycache__/
+*.pyc
+
