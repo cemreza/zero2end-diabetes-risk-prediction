@@ -3,13 +3,13 @@ import joblib
 import pandas as pd
 import altair as alt  
 
--- Model yükleme --
+#-- Model yükleme 
 model = joblib.load("models/final_model.pkl")
 
 st.title("🩺 Diyabet Risk Tahmin Uygulaması")
 st.write("Aşağıdaki bilgileri doldurarak tahmini diyabet riskinizi ve dünya ortalamasıyla karşılaştırmasını görebilirsiniz.")
 
-# YAŞ GRUPLARI
+# YAŞ 
 yas_map = {
     "18–24": 1,
     "25–34": 3,      # 25–29 (2) ve 30–34 (3) arası
